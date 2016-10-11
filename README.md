@@ -1,0 +1,19 @@
+# sd
+using namespace std;
+
+int main()
+{
+	string text;
+	getline(cin, text);
+	fstream nameOfText;
+	nameOfText.open("text1.txt", ios::out);
+	nameOfText << text;
+	nameOfText.close();
+	string word;
+	nameOfText.open("text1.txt", ios::in);
+	while (!nameOfText.eof())
+	{
+		nameOfText >> word;
+		cout << word << endl;
+	}
+	nameOfText.close();
